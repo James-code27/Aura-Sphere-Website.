@@ -1,0 +1,504 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    scrollbar-width: none;
+}
+
+html{
+    scroll-behavior: smooth;
+    background-color:white;
+    background-image: url(../image/background-color.png);
+}
+
+nav{
+    z-index: 1000;
+    margin-top: -100px;
+    position: fixed;
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.811);
+    width: 95%;
+    padding: 5px 40px 5px 30px;
+    border-radius: 20px;
+    border: none;
+
+
+    .main-span{
+        text-decoration: none;
+    }
+
+    .s1{
+        font-size: 30px;
+        color: black;
+    }
+    .s2{
+        font-size: 30px;
+        color: rgba(255, 0, 0, 0.61);
+    } 
+
+    ul{
+        list-style-type: none;
+        margin: 0px 20px;
+    }
+    li{
+        float: left;
+        margin: 15px;
+        padding-bottom: 3px;
+        transition: transform 0.5s ease;
+    }
+    .a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        padding: 3px 0px;
+        font-weight: 600;
+    }
+
+    .dropdown{
+        display: inline;
+    }
+
+    .dropdown .a{
+        cursor: pointer;
+    }
+
+    .dropdown a{
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 8px 10px;
+        transition: transform 0.5s ease;
+    }
+
+    .dropdown .menu{
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.839);
+        border: none;
+        box-shadow: 0px 0px 10px black;
+        border-radius: 10px;
+        margin-top: 5px;
+        width: 180px;
+        display: none;
+        overflow: hidden;
+    }
+}
+
+.dropdown:hover .menu{
+    display: block;
+}
+
+.dropdown.open .menu,
+.dropdown:focus-within .menu{
+    display: block;
+}
+
+.category-menu-toggle{
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+}
+
+.menu a:hover{
+    background-color: rgba(255, 0, 0, 0.653);
+    transform: scale(1.05);
+}
+
+.menu a:active{
+    background-color: rgba(252, 39, 39, 0.653);
+}
+
+.a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 0, 0, 0.641);
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
+}
+
+.a:hover{
+  color: rgba(255, 0, 0, 0.673);
+}
+
+.a:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+nav li:hover{
+  transform: scale(1.05);
+}
+
+i{
+    color: black;
+    margin-right: 5px;
+}
+
+.i{
+    transition: transform, background-color 0.3s ease;
+    border-radius: 5px;
+
+    &:hover{
+        transform: scale(1.1);
+        filter: drop-shadow(0px 0px 8px black);
+        background-color: #11111142;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.clothing-catalog{
+    width: min(1600px, calc(100% - 32px));
+    margin: 78px auto 40px;
+}
+
+html.clothing-page{
+    background: #fff;
+}
+
+html.clothing-category-page{
+    background: #fff url(../image/background-color.png) repeat;
+}
+
+.clothing-catalog-title{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.clothing-category-page .clothing-catalog{
+    display: block;
+    width: min(1600px, calc(100% - 32px));
+    height: auto;
+    min-height: 0;
+    margin: 100px auto 40px;
+    padding: 0;
+}
+
+.clothing-category-page nav{
+    top: 16px;
+    margin-top: 0;
+}
+
+.clothing-category-page .clothing-catalog-title{
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0 0 8px;
+    overflow: visible;
+    color: #000000;
+    font-size: clamp(1.65rem, 2.5vw, 2rem);
+    line-height: 1.2;
+    white-space: normal;
+    clip: auto;
+    clip-path: none;
+}
+
+.clothing-catalog .catalog-price-notice{
+    margin: 0 0 24px;
+    padding: 12px 16px;
+    border: 1px solid #ecd7ad;
+    border-radius: 10px;
+    background: #fff9ec;
+    color: #704e0a;
+    font-size: 0.9rem;
+}
+
+.clothing-catalog .catalog-price-notice[hidden]{
+    display: none;
+}
+
+.clothing-product-grid{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 12px;
+}
+
+.clothing-product-grid .catalog-product-card{
+    min-width: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clothing-product-grid .catalog-product-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(19, 30, 25, 0.715);
+}
+
+.clothing-product-grid .catalog-product-visual{
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - 8px);
+    margin: 4px 4px 0;
+    aspect-ratio: 1.26;
+    border-radius: 12px;
+    background: #f1f4f1;
+}
+
+.clothing-product-grid .catalog-product-visual > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.clothing-product-grid .catalog-product-badge{
+    position: absolute;
+    top: 10px;
+    left: 9px;
+    max-width: calc(100% - 56px);
+    overflow: hidden;
+    padding: 4px 9px;
+    border-radius: 7px;
+    background: #111;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clothing-product-grid .catalog-favorite{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.68);
+    color: #171717;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.clothing-product-grid .catalog-favorite i{
+    margin: 0;
+    color: inherit;
+    line-height: 1;
+}
+
+.clothing-product-grid .catalog-product-details{
+    min-width: 0;
+    padding: 8px 12px 10px;
+}
+
+.clothing-product-grid .catalog-product-details h3{
+    min-height: 0;
+    margin: 0 0 3px;
+    overflow: hidden;
+    color: #171717;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.clothing-product-grid .catalog-product-price{
+    margin: 0;
+    color: #252525;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.clothing-product-grid .catalog-product-actions{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-top: 7px;
+}
+
+.clothing-product-grid .catalog-product-status{
+    display: none;
+}
+
+.clothing-product-grid .catalog-product-rating{
+    display: block;
+    width: max-content;
+    margin-top: 2px;
+    gap: 1px;
+    color: #bd9144;
+    font-size: 0.82rem;
+    line-height: 1;
+}
+
+.clothing-product-grid .catalog-product-rating i{
+    margin-right: 0;
+    color: inherit;
+}
+
+.clothing-product-grid .catalog-product-rating-label{
+    color: #777;
+    font-size: 0.64rem;
+    white-space: nowrap;
+}
+
+.clothing-product-grid .catalog-cart-button{
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+    place-items: center;
+    margin: -1px 0 -1px auto;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.82rem;
+}
+
+.clothing-product-grid .catalog-cart-button i{
+    display: block;
+    margin: 0;
+    color: #fff;
+    line-height: 1;
+}
+
+.clothing-product-grid .catalog-cart-button:disabled{
+    background: #777;
+}
+
+.clothing-product-grid .catalog-favorite:focus-visible,
+.clothing-product-grid .catalog-cart-button:focus-visible{
+    outline: 2px solid #d72d48;
+    outline-offset: 3px;
+}
+
+@media (max-width: 900px){
+    .clothing-catalog{
+        margin-top: 104px;
+    }
+
+    .clothing-category-page .clothing-catalog{
+        width: calc(100% - 32px);
+        justify-content: flex-start;
+        margin: 0 auto;
+        padding: 100px 0 24px;
+    }
+
+    .clothing-page nav{
+        top: 12px;
+        left: 3%;
+        width: 94%;
+        align-items: center;
+        padding: 6px 12px;
+    }
+
+    .clothing-category-page nav{
+        margin-top: 0;
+    }
+
+    .clothing-page nav > div{
+        flex: 1;
+    }
+
+    .clothing-page nav .s1,
+    .clothing-page nav .s2{
+        font-size: clamp(20px, 5vw, 26px);
+    }
+
+    .clothing-page nav ul{
+        display: none;
+    }
+
+    .clothing-page nav .cart-trigger{
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        filter: none;
+    }
+
+    .clothing-page nav > a{
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+    }
+
+    .clothing-page nav > a .i{
+        margin: 0;
+        font-size: 1.05rem;
+    }
+
+    .clothing-product-grid{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-content: center;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px){
+    .clothing-category-page .clothing-catalog{
+        width: calc(100% - 28px);
+    }
+
+    .clothing-product-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 420px){
+    .clothing-catalog{
+        width: calc(100% - 28px);
+        margin-top: 104px;
+    }
+
+    .clothing-category-page .clothing-catalog{
+        width: calc(100% - 28px);
+    }
+
+    .clothing-product-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+body.clothing-page{
+    min-height: 100vh;
+    background: #fff;
+}
+
+body.clothing-category-page{
+    background: transparent;
+}

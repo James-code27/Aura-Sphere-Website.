@@ -1,0 +1,1362 @@
+html,
+body{
+    max-width: 100%;
+}
+
+body{
+    overflow-x: clip;
+}
+
+img{
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select{
+    max-width: 100%;
+}
+
+.store-nav-menu-toggle{
+    display: none;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.store-nav-menu-toggle span{
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: #171717;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.store-nav-menu-toggle:focus-visible{
+    outline: 2px solid #d72d48;
+    outline-offset: 2px;
+}
+
+.store-nav-menu-open .store-nav-menu-toggle span:first-child{
+    transform: translateY(6px) rotate(45deg);
+}
+
+.store-nav-menu-open .store-nav-menu-toggle span:nth-child(2){
+    opacity: 0;
+}
+
+.store-nav-menu-open .store-nav-menu-toggle span:last-child{
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.new{
+    display: grid;
+    width: min(1180px, 100%);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(8px, 1vw, 16px);
+    margin: 0 auto;
+    padding: 0 clamp(12px, 2vw, 24px);
+}
+
+.new > div{
+    min-width: 0;
+}
+
+.new > div > [class^="new-tab"]{
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    padding: 6px clamp(8px, 1vw, 14px);
+}
+
+.new [class$="-2"]{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.6;
+}
+
+.new [class$="-2img"]{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 1000px){
+    .home{
+        height: auto;
+        min-height: 100svh;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 24px;
+        padding: 140px 6vw 36px;
+    }
+
+    .home-body{
+        width: min(100%, 620px);
+        height: auto;
+        margin: 0;
+    }
+
+    .home-body h1{
+        font-size: clamp(2.2rem, 7vw, 3.8rem);
+    }
+
+    .home-p2{
+        max-width: 100%;
+        font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+
+    .home-p3{
+        margin-top: 34px;
+    }
+
+    .fashion-pic{
+        width: min(100%, 560px);
+        max-width: 100%;
+        margin: 0;
+        align-self: center;
+    }
+
+    .fashion-pic img{
+        width: 100%;
+        height: auto;
+    }
+
+    .shop,
+    .new-arrival,
+    .best{
+        height: auto;
+        min-height: 100svh;
+        padding-top: 120px;
+        padding-bottom: 48px;
+    }
+
+    .shop .h1,
+    .new-h1,
+    .best-head{
+        width: calc(100% - 48px);
+        margin: 0 auto 28px;
+    }
+
+    .shop-images{
+        display: grid;
+        width: calc(100% - 48px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .shop-images > [class^="shop-img"]{
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .shop-images > [class^="shop-img"] img{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 0.8;
+        object-fit: cover;
+    }
+
+    .shop-images > [class^="shop-img"] button{
+        width: 100%;
+        padding: 8px 10px;
+    }
+
+    .new{
+        display: grid;
+        width: calc(100% - 48px);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 16px;
+        margin: 0 auto;
+    }
+
+    .new > div{
+        min-width: 0;
+    }
+
+    .new > div > [class^="new-tab"]{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 8px 12px 6px;
+    }
+
+    .new [class$="-2"]{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.6;
+    }
+
+    .new [class$="-2img"]{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .new [class^="new-tab"] h1{
+        font-size: clamp(1.3rem, 3.2vw, 1.6rem);
+        overflow-wrap: anywhere;
+    }
+
+    .features-container{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 0 24px;
+    }
+
+    .feature-item{
+        min-width: 0;
+    }
+
+    .best-seller-tabs{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        padding: 0 24px;
+    }
+
+    .best-seller-tabs > div,
+    .best-seller-tabs > div > [class^="sell-tab"]{
+        width: 100%;
+        min-width: 0;
+    }
+
+    .best-seller-tabs > div > [class^="sell-tab"]{
+        height: auto;
+        min-height: 320px;
+        margin: 0;
+        padding: 16px;
+    }
+
+    .best-seller-tabs [class^="sell-tabs"]{
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .best-seller-tabs [class$="-1"] img{
+        width: clamp(90px, 17vw, 160px);
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .best-seller-tabs [class$="-2"]{
+        min-width: 0;
+    }
+
+    .best-seller-tabs [class$="-2"] button{
+        max-width: 100%;
+    }
+
+    .home-page5,
+    .about-page5{
+        height: auto;
+        min-height: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 28px;
+        margin-top: 0;
+        padding: 40px 24px;
+    }
+
+    .home-pg5-1,
+    .abt-pg5-1{
+        width: min(100%, 420px);
+    }
+
+    .home-pg5-1 > span:last-child,
+    .abt-pg5-1 > span:last-child{
+        flex-wrap: wrap;
+    }
+
+    .home-pg5-1 > span:last-child i,
+    .abt-pg5-1 > span:last-child i{
+        margin: 12px clamp(4px, 2vw, 10px);
+    }
+
+    .home-page5 > div:not(:first-child),
+    .about-page5 > div:not(:first-child){
+        flex: 1 1 140px;
+    }
+
+    .about-page1,
+    .about-page2,
+    .about-page3,
+    .about-page4{
+        width: 100%;
+        height: auto;
+        min-height: 100svh;
+        padding: 120px 6vw 48px;
+    }
+
+    .about-page1,
+    .about-page2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        gap: 28px;
+    }
+
+    .abt-tab1 span h1,
+    .abt-tab1 span h2{
+        font-size: clamp(2.5rem, 8vw, 4.3rem);
+    }
+
+    .abt-tab1 p,
+    .about-page2-tab1,
+    .about-page2-tab2{
+        width: 100%;
+        max-width: 760px;
+        margin: 0;
+    }
+
+    .about-page2-tab1 span h1{
+        font-size: clamp(2.5rem, 7vw, 4rem);
+    }
+
+    .about-page2-tab1 span h2{
+        font-size: clamp(2.1rem, 6vw, 3.2rem);
+    }
+
+    .about-page2-tab2{
+        justify-content: flex-start;
+        gap: 24px;
+    }
+
+    .about-page3{
+        justify-content: center;
+    }
+
+    .about-page4 > span p,
+    .about-page4 > span h2{
+        font-size: clamp(2rem, 6vw, 3.1rem);
+    }
+
+    .abt-pg4-tabs{
+        display: grid;
+        height: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        padding: 24px 0 0;
+    }
+
+    .abt-pg4-tab1,
+    .abt-pg4-tab2,
+    .abt-pg4-tab3{
+        width: 100%;
+        height: auto;
+        min-height: 260px;
+    }
+
+    .clothing-page nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .shop .h1{
+        flex-wrap: wrap;
+        gap: 0 8px;
+    }
+
+    .shop .shop-a{
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 700px){
+    nav{
+        left: 12px;
+        right: 12px;
+        width: calc(100vw - 24px);
+        min-width: 0;
+        max-width: calc(100vw - 24px);
+    }
+
+    nav > ul,
+    .clothing-page nav > ul{
+        display: flex;
+        min-width: 0;
+        flex: 1 0 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 10px;
+        overflow: visible;
+        padding: 4px 2px;
+        white-space: normal;
+    }
+
+    nav li{
+        flex: 0 0 auto;
+        margin: 3px 2px;
+    }
+
+    .home{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 150px 20px 30px;
+    }
+
+    .home-body{
+        width: 100%;
+    }
+
+    .home-body h1{
+        font-size: clamp(2rem, 9vw, 3.3rem);
+    }
+
+    .home-p2{
+        margin: 12px 0;
+        font-size: 0.95rem;
+    }
+
+    .profiles{
+        margin-top: 30px;
+    }
+
+    .home-p3{
+        margin-top: 34px;
+        font-size: 0.9rem;
+    }
+
+    .fashion-pic{
+        width: min(100%, 420px);
+        max-width: none;
+        align-self: center;
+    }
+
+    .shop,
+    .new-arrival{
+        padding-top: 110px;
+        height: 100dvh;
+    }
+
+    .best{
+        padding-top: 110px;
+        scroll-margin-top: 0;
+    }
+
+    .shop .h1,
+    .new-h1,
+    .best-head{
+        width: calc(100% - 32px);
+        margin-bottom: 20px;
+    }
+
+    .new-h1{
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0 6px;
+    }
+
+    .new-h1 h1{
+        margin: 0;
+        font-size: clamp(1.6rem, 8vw, 2.4rem);
+    }
+
+    .shop-h11,
+    .shop-h12,
+    .new-h1,
+    .best-h11,
+    .best-h12{
+        font-size: clamp(1.7rem, 7vw, 2.4rem);
+    }
+
+    .shop-h12{
+        margin-left: 8px;
+    }
+
+    .shop-images,
+    .new{
+        width: calc(100% - 32px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .shop-images > [class^="shop-img"]{
+        padding: 10px;
+        border-radius: 14px;
+    }
+
+    .shop-images > [class^="shop-img"] h1{
+        font-size: 1rem;
+    }
+
+    .new > div > [class^="new-tab"]{
+        padding: 10px;
+    }
+
+    .new [class$="-3-1"]{
+        min-width: 0;
+        gap: 4px;
+    }
+
+    .new [class$="-3-1"] img{
+        width: min(100%, 76px);
+        height: auto;
+        min-width: 0;
+        flex: 1 1 0;
+    }
+
+    .new [class$="-3-1"] .carts{
+        width: 34px;
+        height: 34px;
+        flex: 0 0 34px;
+    }
+
+    .new-tab1-1 h4,
+    .new-tab2-1 h4,
+    .new-tab3-1 h4,
+    .new-tab4-1 h4,
+    .new-tab5-1 h4,
+    .new-tab6-1 h4{
+        font-size: 0.8rem;
+    }
+
+    .features-container{
+        padding: 0 16px;
+    }
+
+    .feature-item{
+        padding: 12px;
+    }
+
+    .best-seller-tabs{
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .best-seller-tabs [class^="sell-tab"]{
+        min-height: 0;
+    }
+
+    .best-seller-tabs [class^="sell-tabs"]{
+        flex-direction: row;
+    }
+
+    .best-seller-tabs [class$="-1"]{
+        flex: 0 0 34%;
+    }
+
+    .best-seller-tabs [class$="-1"] img{
+        width: 100%;
+    }
+
+    .about-page1,
+    .about-page2,
+    .about-page3,
+    .about-page4{
+        padding: 120px 20px 40px;
+    }
+
+    .abt-tab1 span h1,
+    .abt-tab1 span h2{
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+    }
+
+    .abt-tab1 p,
+    .about-page2-tab1 p,
+    .about-page3 p{
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .about-page2-tab2{
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .about-page2-tab21{
+        margin: 0;
+    }
+
+    .about-page3{
+        padding-top: 110px;
+    }
+
+    .abt-pg4-tabs{
+        grid-template-columns: 1fr;
+    }
+
+    .abt-pg4-tab1,
+    .abt-pg4-tab2,
+    .abt-pg4-tab3{
+        min-height: 0;
+    }
+
+    .up-arrow{
+        right: 16px;
+        bottom: 16px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+
+    .contact{
+        min-height: 100svh;
+        padding: 170px 18px 40px;
+    }
+
+    .con-tab2{
+        padding: 18px 14px;
+    }
+
+    .clothing-product-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 420px){
+    nav{
+        left: 8px;
+        right: 8px;
+        padding: 6px 9px;
+    }
+
+    nav .s1,
+    nav .s2{
+        font-size: 20px;
+    }
+
+    nav > ul{
+        gap: 10px;
+    }
+
+    nav .a{
+        font-size: 0.88rem;
+    }
+
+    .shop-images,
+    .new{
+        width: calc(100% - 24px);
+        gap: 9px;
+    }
+
+    .shop-images > [class^="shop-img"]{
+        padding: 8px;
+    }
+
+    .shop-images > [class^="shop-img"] button{
+        font-size: 0.82rem;
+    }
+
+    .new > div > [class^="new-tab"]{
+        padding: 8px;
+    }
+
+    .new [class^="new-tab"] h1{
+        font-size: 1.3rem;
+    }
+
+    .home-pg5-1 p,
+    .abt-pg5-1 p{
+        font-size: 1rem;
+    }
+
+    .contact > span h1,
+    .contact > span h2{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 760px){
+    nav{
+        left: 12px;
+        right: 12px;
+        width: calc(100vw - 24px);
+        min-width: 0;
+        max-width: calc(100vw - 24px);
+    }
+
+    nav > div:not(.store-nav-controls){
+        order: 1;
+    }
+
+    nav > .store-nav-menu-toggle{
+        display: flex;
+        order: 2;
+        margin-left: auto;
+    }
+
+    nav > .store-nav-controls{
+        order: 3;
+        margin-left: 4px;
+    }
+
+    nav > ul,
+    .clothing-page nav > ul{
+        display: none;
+        width: 100%;
+        min-width: 0;
+        flex: 1 0 100%;
+        order: 4;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 10px;
+        margin: 0;
+        padding: 8px 2px 4px;
+    }
+
+    nav.store-nav-menu-open > ul,
+    .clothing-page nav.store-nav-menu-open > ul{
+        display: flex;
+    }
+
+    nav .dropdown.open .menu,
+    nav .dropdown:focus-within .menu{
+        display: block;
+    }
+}
+
+@media (max-width: 420px){
+    nav .s1,
+    nav .s2{
+        font-size: 18px;
+    }
+
+    .store-nav-menu-toggle{
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+    }
+}
+
+/* Home page layout refinements */
+.customer-proof{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.customer-avatars{
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.customer-avatars .profiles{
+    display: block;
+    float: none;
+    width: 30px;
+    margin: 0 -5px 0 0;
+    border: 2px solid #fff;
+}
+
+.customer-avatars .profiles:last-child{
+    margin-right: 0;
+}
+
+.customer-proof .home-p3{
+    width: auto;
+    min-width: 0;
+    margin: 0;
+}
+
+@media (max-width: 1000px){
+    .home,
+    .shop,
+    .new-arrival,
+    .best{
+        height: auto;
+        min-height: 0;
+    }
+
+    .home{
+        padding-bottom: 36px;
+        scroll-margin-top: 90px;
+    }
+
+    .fashion-pic{
+        width: min(100%, 520px);
+    }
+
+    .shop{
+        padding-bottom: 60px;
+        scroll-margin-top: 90px;
+    }
+
+    .shop .h1,
+    .new-h1,
+    .best-head{
+        scroll-margin-top: 90px;
+    }
+
+    .new-arrival{
+        height: auto;
+        min-height: 0;
+        padding-bottom: 60px;
+    }
+
+    .new{
+        align-items: stretch;
+    }
+
+    .new > div > [class^="new-tab"]{
+        height: 100%;
+    }
+
+    .new [class$="-2"]{
+        min-height: 150px;
+    }
+
+    .marquee{
+        width: 100%;
+        margin-top: 36px;
+    }
+
+    .best{
+        padding-bottom: 56px;
+    }
+
+    .features-container{
+        width: 100%;
+    }
+
+    .home-page5,
+    .about-page5{
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    footer{
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 760px){
+    nav{
+        flex-wrap: wrap;
+        border-radius: 16px;
+    }
+
+    nav .dropdown .menu{
+        position: absolute;
+        left: 50%;
+        width: min(180px, calc(100vw - 40px));
+        transform: translateX(-50%);
+    }
+
+    .home{
+        min-height: 100svh;
+        justify-content: flex-start;
+        gap: 16px;
+        padding: 120px 20px 32px;
+    }
+
+    .home-body{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home-body h1{
+        line-height: 1.02;
+    }
+
+    .home-p2{
+        line-height: 1.55;
+    }
+
+    .home-body a{
+        display: inline-flex;
+        margin: 8px 8px 0 0;
+    }
+
+    .hbutton1,
+    .hbutton2{
+        width: min(160px, 42vw);
+    }
+
+    .profiles{
+        margin-top: 24px;
+    }
+
+    .home-p3{
+        width: calc(100% - 150px);
+        min-width: 210px;
+        margin-top: -28px;
+        margin-left: 135px;
+        line-height: 1.35;
+    }
+
+    .fashion-pic{
+        max-height: 280px;
+    }
+
+    .fashion-pic img{
+        max-height: 280px;
+        object-fit: contain;
+    }
+
+    .float-image{
+        width: calc(100% - 32px);
+        margin: 8px auto 0;
+        padding: 4px 0 12px;
+    }
+
+    .shop,
+    .new-arrival,
+    .best{
+        height: auto;
+        min-height: 0;
+        scroll-margin-top: 90px;
+    }
+
+    .shop{
+        padding: 100px 0 48px;
+    }
+
+    .shop .h1{
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: baseline;
+        width: calc(100% - 32px);
+    }
+
+    .shop .shop-a{
+        grid-column: 1 / -1;
+        justify-self: start;
+        margin: 8px 0 0;
+    }
+
+    .shop-images{
+        align-items: stretch;
+    }
+
+    .shop-images > [class^="shop-img"]{
+        display: flex;
+        min-height: 0;
+        flex-direction: column;
+    }
+
+    .shop-images > [class^="shop-img"] img{
+        aspect-ratio: 0.9;
+    }
+
+    .shop-images > [class^="shop-img"] h1{
+        flex: 1;
+    }
+
+    .shop-but,
+    .shop-but a{
+        width: 100%;
+    }
+
+    .new-arrival{
+        padding: 100px 0 48px;
+    }
+
+    .new{
+        align-items: stretch;
+    }
+
+    .new > div > [class^="new-tab"]{
+        position: relative;
+        min-height: 260px;
+    }
+
+    .new .new-tab1-1,
+    .new .new-tab2-1,
+    .new .new-tab3-1,
+    .new .new-tab4-1,
+    .new .new-tab5-1{
+        position: absolute;
+        z-index: 1;
+        top: 12px;
+        left: 12px;
+        display: block;
+    }
+
+    .new .new-tab1-1 h4,
+    .new .new-tab2-1 h4,
+    .new .new-tab3-1 h4,
+    .new .new-tab4-1 h4,
+    .new .new-tab5-1 h4{
+        margin: 0;
+    }
+
+    .new [class$="-2"]{
+        min-height: 130px;
+    }
+
+    .new [class$="-3"]{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .new [class$="-3-1"]{
+        margin-top: auto;
+    }
+
+    .new [class$="-3-1"] > img{
+        width: min(112px, calc(100% - 44px));
+        max-width: 100%;
+        height: auto;
+        min-width: 0;
+        min-height: 0;
+        flex: 0 1 112px;
+        object-fit: contain;
+    }
+
+    .features-container{
+        margin-top: 16px;
+    }
+
+    .best-seller-tabs{
+        align-items: stretch;
+        margin-top: 24px;
+    }
+
+    .best-seller-tabs [class^="sell-tab"]{
+        height: auto;
+        min-height: 0;
+    }
+
+    .best-seller-tabs [class^="sell-tabs"]{
+        min-height: 220px;
+        align-items: center;
+    }
+
+    .home-page5,
+    .about-page5{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+        gap: 28px 20px;
+        padding: 36px 20px;
+    }
+
+    .home-pg5-1,
+    .abt-pg5-1{
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .home-pg5-1 p,
+    .abt-pg5-1 p{
+        max-width: 620px;
+    }
+
+    .home-page5 > div:not(:first-child),
+    .about-page5 > div:not(:first-child){
+        width: 100%;
+    }
+
+    .up-arrow{
+        z-index: 1200;
+    }
+}
+
+@media (max-width: 480px){
+    .customer-proof{
+        width: 100%;
+        gap: 8px;
+    }
+
+    .customer-proof .home-p3{
+        max-width: calc(100% - 125px);
+        font-size: 0.78rem;
+        line-height: 1.25;
+    }
+
+    .home{
+        padding: 112px 16px 28px;
+    }
+
+    .home-body h1{
+        font-size: clamp(2.1rem, 12vw, 3rem);
+    }
+
+    .home-p2{
+        white-space: normal;
+        font-size: 0.9rem;
+    }
+
+    .hbutton1,
+    .hbutton2{
+        width: 145px;
+        margin-right: 4px;
+    }
+
+    .home-p3{
+        min-width: 0;
+        width: calc(100% - 120px);
+        margin-left: 120px;
+        font-size: 0.78rem;
+    }
+
+    .float-image{
+        width: calc(100% - 24px);
+    }
+
+    .shop .h1,
+    .new-h1,
+    .best-head{
+        width: calc(100% - 24px);
+    }
+
+    .shop-h11,
+    .shop-h12,
+    .new-h1 h1,
+    .best-h11,
+    .best-h12{
+        font-size: 1.75rem;
+    }
+
+    .shop-images,
+    .new{
+        width: calc(100% - 24px);
+        grid-template-columns: 1fr;
+    }
+
+    .shop-images > [class^="shop-img"]{
+        max-width: 340px;
+        justify-self: center;
+    }
+
+    .shop-images > [class^="shop-img"] img{
+        aspect-ratio: 1.05;
+    }
+
+    .new{
+        gap: 14px;
+    }
+
+    .new > div{
+        max-width: 340px;
+        width: 100%;
+        justify-self: center;
+    }
+
+    .new [class^="new-tab"]{
+        min-height: 0;
+    }
+
+    .new > div > [class^="new-tab"]{
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .new [class$="-2"]{
+        min-height: 150px;
+        aspect-ratio: 1.6;
+    }
+
+    .new [class$="-2img"]{
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .new [class$="-3"] h1{
+        margin-top: 0;
+        margin-bottom: 2px;
+    }
+
+    .new [class$="-3"] > h4{
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .new [class$="-3-1"]{
+        width: 100%;
+        align-items: center;
+        margin-top: 4px;
+    }
+
+    .new [class$="-3-1"] img{
+        width: 92px;
+        max-width: calc(100% - 44px);
+        height: 22px;
+        flex: 0 1 92px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    .new [class$="-3-1"] .carts{
+        width: 34px;
+        height: 34px;
+        flex: 0 0 34px;
+        margin: 0;
+    }
+
+    .features-container{
+        grid-template-columns: 1fr;
+        padding: 0 12px;
+    }
+
+    .feature-item{
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 18px;
+    }
+
+    .best-seller-tabs{
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .best-seller-tabs [class^="sell-tabs"]{
+        min-height: 0;
+    }
+
+    .best-seller-tabs [class$="-1"]{
+        flex-basis: 38%;
+    }
+
+    .home-page5,
+    .about-page5{
+        grid-template-columns: 1fr;
+    }
+
+    .home-pg5-1,
+    .abt-pg5-1{
+        grid-column: auto;
+    }
+
+    .home-pg5-1 > span:last-child,
+    .abt-pg5-1 > span:last-child{
+        justify-content: flex-start;
+    }
+
+    .home-pg5-1 i,
+    .abt-pg5-1 i{
+        margin: 14px 8px;
+    }
+}
+
+@media (max-width: 360px){
+    nav .store-nav-controls{
+        gap: 2px;
+    }
+
+    nav .cart-trigger,
+    nav .store-nav-icon-link,
+    nav .store-nav-icon,
+    nav .store-nav-menu-toggle{
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+    }
+
+    .hbutton1,
+    .hbutton2{
+        width: 132px;
+        font-size: 0.9rem;
+    }
+
+    .home-p3{
+        width: calc(100% - 112px);
+        margin-left: 112px;
+    }
+
+    .profiles{
+        width: 26px;
+    }
+}
+
+@media (max-width: 480px){
+    .new > div{
+        margin: 0;
+    }
+
+    .new > div > [class^="new-tab"]{
+        padding: 16px;
+        border-radius: 30px;
+    }
+
+    .new .new-tab1-1,
+    .new .new-tab2-1,
+    .new .new-tab3-1,
+    .new .new-tab4-1,
+    .new .new-tab5-1{
+        top: 10px;
+        left: 16px;
+    }
+
+    .new .new-tab1-1 h4,
+    .new .new-tab2-1 h4,
+    .new .new-tab3-1 h4,
+    .new .new-tab4-1 h4,
+    .new .new-tab5-1 h4{
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-size: 1.35rem;
+        line-height: 1.2;
+    }
+
+    .new [class$="-2"]{
+        margin-top: 44px;
+        min-height: 0;
+    }
+
+    .new [class$="-3"]{
+        gap: 4px;
+        padding: 8px 8px 0;
+    }
+
+    .new [class$="-3"] h1{
+        margin: 0 0 4px;
+        font-size: 1.7rem;
+        line-height: 1.15;
+    }
+
+    .new [class$="-3"] > h4{
+        margin: 0;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    .new [class$="-3-1"]{
+        width: 100%;
+        justify-content: space-between;
+        margin: 8px 0 0;
+    }
+
+    .new [class$="-3-1"] img{
+        width: min(112px, calc(100% - 44px));
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+        flex: 0 1 112px;
+    }
+
+    .new [class$="-3-1"] .carts{
+        width: 58px;
+        height: 58px;
+        flex: 0 0 58px;
+        border-radius: 14px;
+    }
+
+    .new [class$="-3-1"] .carts i{
+        margin: 0;
+        font-size: 1.7rem;
+    }
+}
